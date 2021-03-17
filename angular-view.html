@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <meta charset="utf-8">
+            <title>View
+            </title>
+            <link rel="stylesheet" href="Home.css">
+            <link rel="stylesheet" href="leftsidenav.css">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+          
+           <script>
+
+function openNav() {
+  document.getElementById("myleftSidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("myleftSidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+
+</script>
+  <link rel="stylesheet" type="text/css" href="angularhome.css">
+</head>
+<body>
+     <div id="myleftSidenav" class="sidenav"><h3>AngularJs Tutorial</h3>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="angular-home.html">AngularJS - Home</a>
+  <a href="angular-overview.html">AngularJS - Overview</a>
+  <a href="angular-environment.html">AngularJS - Environment Setup</a>
+  <a href="angular-mvc.html">AngularJS - MVC Architecture</a>
+  <a href="angular-first.html">AngularJS - First Application</a>
+  <a href="angular-directive.html">AngularJS - Directives</a>
+  <a href="angular-expression.html">AngularJS - Expressions</a>
+  <a href="angular-controller.html">AngularJS - Controllers</a>
+  <a href="angular-filter.html">AngularJS -Filters</a>
+  <a href="angular-table.html">AngularJS - Tables</a>
+  <a href="angular-dom.html">AngularJS - HTML DOM</a>
+  <a href="angular-module.html">AngularJS - Modules</a>
+  <a href="angular-form.html">AngularJS - Forms</a>
+  <a href="angular-view.html">AngularJS - Views</a>
+  <a href="angular-scope.html">AngularJS - Scope</a>
+  <a href="angular-service.html">AngularJS - Services</a>
+  <a href="angular-custom-dir.html">AngularJS - Custom Directives</a>
+</div>
+
+           <div id="main">
+
+            <header class="hea"><h1 class="b"> Welcome<span class="c"> To</span> Techno <span class="d">Tutor!</span>...</h1></header>
+      
+           <ul id="menu">
+                <ul>
+                     <center>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="LogIn.html">Quiz</a></li>
+                    <li><a style="font-size:30px;cursor:pointer" onclick="openNav()">Our Courses</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="our.html">Dev.</a></li>
+                    </center>
+                </ul>
+            </ul>
+            <div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+
+<hr />
+
+
+<div class="pre-btn">
+<a href="angular-form.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<h1>AngularJS - Views</h1>
+<div class="nxt-btn">
+<a href="angular-scope.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>AngularJS supports Single Page Application via multiple views on a single page. To do this, AngularJS has provided ng-view and ng-template directives, and $routeProvider services.</p>
+<h2>ng-view Directive</h2>
+<p>The ng-view directive simply creates a place holder where a corresponding view (HTML or ng-template view) can be placed based on the configuration.</p>
+<h2>Usage</h2>
+<p>Define a div with ng-view within the main module.</p>
+<pre class="result notranslate">
+&lt;div ng-app = "mainApp"&gt;
+   ...
+   &lt;div ng-view&gt;&lt;/div&gt;
+
+&lt;/div&gt;    
+</pre>
+<h2>ng-template Directive</h2>
+<p>The ng-template directive is used to create an HTML view using script tag. It contains <i>id</i> attribute which is used by $routeProvider to map a view with a controller.</p>
+<h2>Usage</h2>
+<p>Define a script block with type as ng-template within the main module.</p>
+<pre class="prettyprint notranslate">
+&lt;div ng-app = "mainApp"&gt;
+   ...
+  
+   &lt;script type = "text/ng-template" id = "addStudent.htm"&gt;
+      &lt;h2&gt; Add Student &lt;/h2&gt;
+      {{message}}
+   &lt;/script&gt;
+
+&lt;/div&gt;    
+</pre>
+<h2>$routeProvider Service</h2>
+<p>The $routeProvider is a key service which sets the configuration of URLs, maps them with the corresponding HTML page or ng-template, and attaches a controller with the same.</p>
+<h2>Usage 1</h2>
+<p>Define a script block with type as ng-template within the main module.</p>
+<pre class="prettyprint notranslate">
+&lt;div ng-app = "mainApp"&gt; 
+   ... 
+   &lt;script type = "text/ng-template" id = "addStudent.htm"&gt; 
+      &lt;h2&gt; Add Student &lt;/h2&gt; 
+      {{message}} 
+   &lt;/script&gt;  
+&lt;/div&gt;
+</pre>
+<h3>Usage 2</h3>
+<p>Define a script block with main module and set the routing configuration.</p>
+<pre class="prettyprint notranslate">
+var mainApp = angular.module("mainApp", ['ngRoute']);
+
+mainApp.config(['$routeProvider', function($routeProvider) {
+   $routeProvider
+   
+   .when('/addStudent', {
+      templateUrl: 'addStudent.htm', controller: 'AddStudentController'
+   })
+   .when('/viewStudents', {
+      templateUrl: 'viewStudents.htm', controller: 'ViewStudentsController'
+   })
+   .otherwise ({
+      redirectTo: '/addStudent'
+   });
+  
+}]);
+</pre>
+<p>The following points are important to be considered in the above example &minus;</p>
+<ul class="list">
+<li><p>$routeProvider is defined as a function under config of mainApp module using key as '$routeProvider'.</p></li>
+<li><p>$routeProvider.when defines a URL "/addStudent", which is mapped to "addStudent.htm". addStudent.htm should be present in the same path as main HTML page. If the HTML page is not defined, then ng-template needs to be used with id="addStudent.htm". We used ng-template.</p></li>
+<li><p>"otherwise" is used to set the default view.</p></li>
+<li><p>"controller" is used to set the corresponding controller for the view.</p></li>
+</ul>
+<h2>Example</h2>
+<p>The following example shows the use of all the above-mentioned directives.</p>
+<h3>testAngularJS.htm</h3>
+
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Angular JS Views&lt;/title&gt;
+      &lt;script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"&gt;&lt;/script&gt;
+      &lt;script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"&gt;
+      &lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;h2&gt;AngularJS Sample Application&lt;/h2&gt;
+      &lt;div ng-app = "mainApp"&gt;
+         &lt;p&gt;&lt;a href = "#addStudent"&gt;Add Student&lt;/a&gt;&lt;/p&gt;
+         &lt;p&gt;&lt;a href = "#viewStudents"&gt;View Students&lt;/a&gt;&lt;/p&gt;
+         &lt;div ng-view&gt;&lt;/div&gt;
+         
+         &lt;script type = "text/ng-template" id = "addStudent.htm"&gt;
+            &lt;h2&gt; Add Student &lt;/h2&gt;
+            {{message}}
+         &lt;/script&gt;
+         
+         &lt;script type = "text/ng-template" id = "viewStudents.htm"&gt;
+            &lt;h2&gt; View Students &lt;/h2&gt;
+            {{message}}
+         &lt;/script&gt;
+      &lt;/div&gt;
+      
+      &lt;script&gt;
+         var mainApp = angular.module("mainApp", ['ngRoute']);
+         mainApp.config(['$routeProvider', function($routeProvider) {
+            $routeProvider
+            
+            .when('/addStudent', {
+               templateUrl: 'addStudent.htm',
+               controller: 'AddStudentController'
+            })
+            .when('/viewStudents', {
+               templateUrl: 'viewStudents.htm',
+               controller: 'ViewStudentsController'
+            })
+            .otherwise({
+               redirectTo: '/addStudent'
+            });
+         }]);
+         mainApp.controller('AddStudentController', function($scope) {
+            $scope.message = "This page will be used to display add student form";
+         });
+         mainApp.controller('ViewStudentsController', function($scope) {
+            $scope.message = "This page will be used to display all the students";
+         });
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Output</h2>
+<p>Open the file <i>testAngularJS.htm</i> in a web browser and see the result.</p>
+<iframe onload="resizeFrame(this)" class="im" src="angular-view-ex.html" height="220px" width="600px"></iframe>
+<hr />
+<div class="pre-btn">
+<a href="angular-form.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+
+<div class="nxt-btn">
+<a href="angular-scope.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+</div>
+</div>
+</div>
+          </div>
+        </body>
+        </html>

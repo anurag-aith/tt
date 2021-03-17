@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <meta charset="utf-8">
+            <title>HTML DOM
+            </title>
+            <link rel="stylesheet" href="Home.css">
+            <link rel="stylesheet" href="leftsidenav.css">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+          
+           <script>
+
+function openNav() {
+  document.getElementById("myleftSidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("myleftSidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+
+</script>
+ <style>
+
+         table, th , td {
+            
+            padding: 5px;
+            text-align: center;
+         }
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+      </style>
+  <link rel="stylesheet" type="text/css" href="angularhome.css">
+</head>
+<body>
+     <div id="myleftSidenav" class="sidenav"><h3>AngularJs Tutorial</h3>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="angular-home.html">AngularJS - Home</a>
+  <a href="angular-overview.html">AngularJS - Overview</a>
+  <a href="angular-environment.html">AngularJS - Environment Setup</a>
+  <a href="angular-mvc.html">AngularJS - MVC Architecture</a>
+  <a href="angular-first.html">AngularJS - First Application</a>
+  <a href="angular-directive.html">AngularJS - Directives</a>
+  <a href="angular-expression.html">AngularJS - Expressions</a>
+  <a href="angular-controller.html">AngularJS - Controllers</a>
+  <a href="angular-filter.html">AngularJS -Filters</a>
+  <a href="angular-table.html">AngularJS - Tables</a>
+  <a href="angular-dom.html">AngularJS - HTML DOM</a>
+  <a href="angular-module.html">AngularJS - Modules</a>
+  <a href="angular-form.html">AngularJS - Forms</a>
+  <a href="angular-view.html">AngularJS - Views</a>
+  <a href="angular-scope.html">AngularJS - Scope</a>
+  <a href="angular-service.html">AngularJS - Services</a>
+   <a href="angular-custom-dir.html">AngularJS - Custom Directives</a>
+
+</div>
+
+           <div id="main">
+
+            <header class="hea"><h1 class="b"> Welcome<span class="c"> To</span> Techno <span class="d">Tutor!</span>...</h1></header>
+      
+            <ul id="menu">
+                <ul>
+                    <center>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="LogIn.html">Quiz</a></li>
+                    <li><a style="font-size:30px;cursor:pointer" onclick="openNav()">Our Courses</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="our.html">Dev.</a></li>
+                    </center>
+                </ul>
+            </ul>
+
+            <div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+
+
+
+<hr />
+<div class="pre-btn">
+<a href="angular-table.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<h1>AngularJS - HTML DOM</h1>
+<div class="nxt-btn">
+<a href="angular-module.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>The following directives are used to bind application data to the attributes of HTML DOM elements &minus;</p>
+<table class="table table-bordered im">
+<tr>
+<th width="10%">Sr.No.</th>
+<th style="text-align:center;">Name &amp; Description</th>
+</tr>
+<tr>
+<td class="ts">1</td>
+<td><p><b>ng-disabled</b></p>
+<p>disables a given control.</p></td>
+</tr>
+<tr>
+<td class="ts">2</td>
+<td><p><b>ng-show</b></p>
+<p>shows a given control.</p></td>
+</tr>
+<tr>
+<td class="ts">3</td>
+<td><p><b>ng-hide</b></p>
+<p>hides a given control.</p></td>
+</tr>
+<tr>
+<td class="ts">4</td>
+<td><p><b>ng-click</b></p>
+<p>represents a AngularJS click event.</p></td>
+</tr>
+</table>
+<h2>ng-disabled Directive</h2>
+<p>Add ng-disabled attribute to an HTML button and pass it a model. Bind the model to a checkbox and see the variation.</p>
+<pre class="result notranslate">
+&lt;input type = "checkbox" ng-model = "enableDisableButton"&gt;Disable Button
+&lt;button ng-disabled = "enableDisableButton"&gt;Click Me!&lt;/button&gt;
+</pre>
+<h2>ng-show Directive</h2>
+<p>Add ng-show attribute to an HTML button and pass it a model. Bind the model to a checkbox and see the variation.</p>
+<pre class="result notranslate">
+&lt;input type = "checkbox" ng-model = "showHide1"&gt;Show Button
+&lt;button ng-show = "showHide1"&gt;Click Me!&lt;/button&gt;
+</pre>
+<h2>ng-hide Directive</h2>
+<p>Add ng-hide attribute to an HTML button and pass it a model. Bind the model to a checkbox and see the variation.</p>
+<pre class="result notranslate">
+&lt;input type = "checkbox" ng-model = "showHide2"&gt;Hide Button
+&lt;button ng-hide = "showHide2"&gt;Click Me!&lt;/button&gt;
+</pre>
+<h2>ng-click Directive</h2>
+<p>Add ng-click attribute to an HTML button and update a model. Bind the model to HTML and see the variation.</p>
+<pre class="result notranslate">
+&lt;p&gt;Total click: {{ clickCounter }}&lt;/p&gt;
+&lt;button ng-click = "clickCounter = clickCounter + 1"&gt;Click Me!&lt;/button&gt;
+</pre>
+<h2>Example</h2>
+<p>The following example shows use of all the above mentioned directives.</p>
+<h3>testAngularJS.htm</h3>
+
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;AngularJS HTML DOM&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;h2&gt;AngularJS Sample Application&lt;/h2&gt;
+      
+      &lt;div ng-app = ""&gt;
+         &lt;table border = "0"&gt;
+            &lt;tr&gt;
+               &lt;td&gt;&lt;input type = "checkbox" ng-model = "enableDisableButton"&gt;Disable Button&lt;/td&gt;
+               &lt;td&gt;&lt;button ng-disabled = "enableDisableButton"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+               &lt;td&gt;&lt;input type = "checkbox" ng-model = "showHide1"&gt;Show Button&lt;/td&gt;
+               &lt;td&gt;&lt;button ng-show = "showHide1"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+               &lt;td&gt;&lt;input type = "checkbox" ng-model = "showHide2"&gt;Hide Button&lt;/td&gt;
+               &lt;td&gt;&lt;button ng-hide = "showHide2"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+               &lt;td&gt;&lt;p&gt;Total click: {{ clickCounter }}&lt;/p&gt;&lt;/td&gt;
+               &lt;td&gt;&lt;button ng-click = "clickCounter = clickCounter + 1"&gt;Click Me!&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+         &lt;/table&gt;
+      &lt;/div&gt;
+      
+      &lt;script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"&gt;
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Output</h2>
+<p>Open the file <i>testAngularJS.htm</i> in a web browser and see the result.</p>
+<iframe onload="resizeFrame(this)" class="im" src="angular-dom-ex.html" height="250px" width="600px"></iframe>
+<hr />
+<div class="pre-btn">
+<a href="angular-table.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+
+<div class="nxt-btn">
+<a href="angular-module.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+</div>
+</div>
+</div>
+          </div>
+        </body>
+        </html>

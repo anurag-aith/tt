@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+ <head>
+            <meta charset="utf-8">
+            <title>Custom-Directories
+            </title>
+            <link rel="stylesheet" href="Home.css">
+            <link rel="stylesheet" href="leftsidenav.css">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+          
+           <script>
+
+function openNav() {
+  document.getElementById("myleftSidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("myleftSidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+
+</script>
+  <link rel="stylesheet" type="text/css" href="angularhome.css">
+</head>
+<body>
+     <div id="myleftSidenav" class="sidenav"><h3>AngularJs Tutorial</h3>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="angular-home.html">AngularJS - Home</a>
+  <a href="angular-overview.html">AngularJS - Overview</a>
+  <a href="angular-environment.html">AngularJS - Environment Setup</a>
+  <a href="angular-mvc.html">AngularJS - MVC Architecture</a>
+  <a href="angular-first.html">AngularJS - First Application</a>
+  <a href="angular-directive.html">AngularJS - Directives</a>
+  <a href="angular-expression.html">AngularJS - Expressions</a>
+  <a href="angular-controller.html">AngularJS - Controllers</a>
+  <a href="angular-filter.html">AngularJS -Filters</a>
+  <a href="angular-table.html">AngularJS - Tables</a>
+  <a href="angular-dom.html">AngularJS - HTML DOM</a>
+  <a href="angular-module.html">AngularJS - Modules</a>
+  <a href="angular-form.html">AngularJS - Forms</a>
+  <a href="angular-view.html">AngularJS - Views</a>
+  <a href="angular-scope.html">AngularJS - Scope</a>
+  <a href="angular-service.html">AngularJS - Services</a>
+  <a href="angular-custom-dir.html">AngularJS - Custom Directives</a>
+
+</div>
+
+           <div id="main">
+
+            <header class="hea"><h1 class="b"> Welcome<span class="c"> To</span> Techno <span class="d">Tutor!</span>...</h1></header>
+      
+           <ul id="menu">
+                <ul>
+                     <center>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="LogIn.html">Quiz</a></li>
+                    <li><a style="font-size:30px;cursor:pointer" onclick="openNav()">Our Courses</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="our.html">Dev.</a></li>
+                    </center>
+                </ul>
+            </ul>
+            <div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+
+
+<hr />
+<div class="pre-btn">
+<a href="angular-service.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+<h1>AngularJS - Custom Directives</h1>
+
+</div>
+<div class="nxt-btn">
+<a href="LogIn.html">Quiz Section <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Custom directives are used in AngularJS to extend the functionality of HTML. Custom directives are defined using "directive" function. A custom directive simply replaces the element for which it is activated. AngularJS application during bootstrap finds the matching elements and do one time activity using its compile() method of the custom directive then process the element using link() method of the custom directive based on the scope of the directive. AngularJS provides support to create custom directives for following type of elements.</p>
+<ul class="list">
+<li><p><b>Element directives</b> &minus; Directive activates when a matching element is encountered.</p></li>
+<li><p><b>Attribute</b> &minus; Directive activates when a matching attribute is encountered.</p></li>
+<li><p><b>CSS</b> &minus; Directive activates when a matching css style is encountered.</p></li>
+<li><p><b>Comment</b> &minus; Directive activates when a matching comment is encountered.</p></li>
+</ul>
+<h2>Understanding Custom Directive</h2>
+<p>Define custom html tags.</p>
+<pre class="result notranslate">
+&lt;student name = "ABC"&gt;&lt;/student&gt;&lt;br/&gt;
+&lt;student name = "XYZ"&gt;&lt;/student&gt;
+</pre>
+<p>Define custom directive to handle above custom html tags.</p>
+<pre class="prettyprint notranslate">
+var mainApp = angular.module("mainApp", []);
+
+//Create a directive, first parameter is the html element to be attached.   
+//We are attaching student html tag. 
+//This directive will be activated as soon as any student element is encountered in html
+
+mainApp.directive('student', function() {
+   //define the directive object
+   var directive = {};
+   
+   //restrict = E, signifies that directive is Element directive
+   directive.restrict = 'E';
+   
+   //template replaces the complete element with its text. 
+   directive.template = "Student: &lt;b&gt;{{student.name}}&lt;/b&gt; , 
+      Roll No: &lt;b&gt;{{student.rollno}}&lt;/b&gt;";
+   
+   //scope is used to distinguish each student element based on criteria.
+   directive.scope = {
+      student : "=name"
+   }
+   
+   //compile is called during application initialization. AngularJS calls 
+      it once when html page is loaded.
+  
+   directive.compile = function(element, attributes) {
+      element.css("border", "1px solid #cccccc");
+      
+      //linkFunction is linked with each element with scope to get the element specific data.
+      var linkFunction = function($scope, element, attributes) {
+         element.html("Student: &lt;b&gt;"+$scope.student.name +"&lt;/b&gt; , 
+            Roll No: &lt;b&gt;"+$scope.student.rollno+"&lt;/b&gt;&lt;br/&gt;");
+         element.css("background-color", "#ff00ff");
+      }
+      return linkFunction;
+   }
+   
+   return directive;
+});
+</pre>
+<p>Define controller to update the scope for directive. Here we are using name attribute's value as scope's child.</p>
+<pre class="prettyprint notranslate">
+mainApp.controller('StudentController', function($scope) {
+   $scope.ABC = {};
+   $scope.ABC.name = "ABC DEF";
+   $scope.ABC.rollno  = 1;
+   
+   $scope.XYZ = {};
+   $scope.XYZ.name = "XYZ DEF";
+   $scope.XYZ.rollno  = 2;
+});
+</pre>
+<h2>Example</h2>
+
+<pre class="prettyprint notranslate">
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;Angular JS Custom Directives&lt;/title&gt;
+   &lt;/head&gt;
+   
+   &lt;body&gt;
+      &lt;h2&gt;AngularJS Sample Application&lt;/h2&gt;
+      
+      &lt;div ng-app = "mainApp" ng-controller = "StudentController"&gt;
+         &lt;student name = "ABC"&gt;&lt;/student&gt;&lt;br/&gt;
+         &lt;student name = "XYZ"&gt;&lt;/student&gt;
+      &lt;/div&gt;
+    
+      &lt;script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"&gt;
+      &lt;/script&gt;
+      
+      &lt;script&gt;
+         var mainApp = angular.module("mainApp", []);
+         
+         mainApp.directive('student', function() {
+            var directive = {};
+            directive.restrict = 'E';
+            directive.template = "Student: &lt;b&gt;{{student.name}}&lt;/b&gt; , 
+               Roll No: &lt;b&gt;{{student.rollno}}&lt;/b&gt;";
+            
+            directive.scope = {
+               student : "=name"
+            }
+            directive.compile = function(element, attributes) {
+               element.css("border", "1px solid #cccccc");
+               
+               var linkFunction = function($scope, element, attributes) {
+                  element.html("Student: &lt;b&gt;"+$scope.student.name +"&lt;/b&gt; , 
+                     Roll No: &lt;b&gt;"+$scope.student.rollno+"&lt;/b&gt;&lt;br/&gt;");
+                  element.css("background-color", "#ff00ff");
+               }
+               return linkFunction;
+            }
+            
+            return directive;
+         });
+         mainApp.controller('StudentController', function($scope) {
+            $scope.ABC = {};
+            $scope.ABC.name = "ABC DEF";
+            $scope.ABC.rollno  = 1;
+
+            $scope.XYZ = {};
+            $scope.XYZ.name = "XYZ DEF";
+            $scope.XYZ.rollno  = 2;
+         });
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h2>Output</h2>
+<p>Open <i>textAngularJS.htm</i> in a web browser. See the result.</p>
+<iframe onload="resizeFrame(this)" class="im" src="angular-custom-dir-ex.html" height="250px" width="600px"></iframe>
+<hr />
+<div class="pre-btn">
+<a href="angular-service.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+
+<div class="nxt-btn">
+<a href="LogIn.html">Quiz Section <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+</div>
+</div>
+</div>
+          </div>
+        </body>
+        </html>

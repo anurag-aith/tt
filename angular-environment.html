@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head> <meta charset="utf-8">
+            <title>Environment Setup
+            </title>
+            <link rel="stylesheet" href="Home.css">
+            <link rel="stylesheet" href="leftsidenav.css">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+          
+           <script>
+
+function openNav() {
+  document.getElementById("myleftSidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("myleftSidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+
+</script>
+	<link rel="stylesheet" type="text/css" href="angularhome.css">
+</head>
+</head>
+<body>
+  <div id="myleftSidenav" class="sidenav"><h3>AngularJs Tutorial</h3>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="angular-home.html">AngularJS - Home</a>
+  <a href="angular-overview.html">AngularJS - Overview</a>
+  <a href="angular-environment.html">AngularJS - Environment Setup</a>
+  <a href="angular-mvc.html">AngularJS - MVC Architecture</a>
+  <a href="angular-first.html">AngularJS - First Application</a>
+  <a href="angular-directive.html">AngularJS - Directives</a>
+  <a href="angular-expression.html">AngularJS - Expressions</a>
+  <a href="angular-controller.html">AngularJS - Controllers</a>
+  <a href="angular-filter.html">AngularJS -Filters</a>
+  <a href="angular-table.html">AngularJS - Tables</a>
+  <a href="angular-dom.html">AngularJS - HTML DOM</a>
+  <a href="angular-module.html">AngularJS - Modules</a>
+  <a href="angular-form.html">AngularJS - Forms</a>
+  <a href="angular-view.html">AngularJS - Views</a>
+  <a href="angular-scope.html">AngularJS - Scope</a>
+  <a href="angular-service.html">AngularJS - Services</a>
+  <a href="angular-custom-dir.html">AngularJS - Custom Directives</a>
+
+</div>
+           <div id="main">
+
+            <header class="hea"><h1 class="b"> Welcome<span class="c"> To</span> Techno <span class="d">Tutor!</span>...</h1></header>
+      
+            <ul id="menu">
+                <ul>
+                     <center>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="LogIn.html">Quiz</a></li>
+                    <li><a style="font-size:30px;cursor:pointer" onclick="openNav()">Our Courses</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="our.html">Dev.</a></li>
+                    </center>
+                </ul>
+            </ul>
+            <div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+
+
+
+<hr />
+<div class="pre-btn">
+<a href="angular-overview.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<h1>AngularJS - Environment Setup</h1>
+<div class="nxt-btn">
+<a href="angular-mvc.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>This chapter describes how to set up AngularJS library to be used in web application development. It also briefly describes the directory structure and its contents.</p>
+<p>When you open the link <a rel="nofollow" target="_blank" href="https://angularjs.org/">https://angularjs.org/</a>, you will see there are two options to download AngularJS library &minus;</p>
+<img class="im" src="image/angularjs_environment_download.jpg" alt="AngularJS Download" />
+<ul class="list">
+<li><p><b>View on GitHub</b> &minus; By clicking on this button, you are diverted to GitHub and get all the latest scripts.</p></li>
+<li><p><b>Download AngularJS 1</b> &minus; By clicking on this button, a screen you get to see a dialog box shown as &minus; </p></li>
+</ul>
+<img class="im"  src="image/angularjs_environment_download1.jpg" alt="AngularJS Download" />
+<p>This screen gives various options of using Angular JS as follows &minus;</p>
+<ul class="list">
+<li><p><b>Downloading and hosting files locally</b></p>
+<ul class="list">
+<li><p>There are two different options : Legacy and Latest. The names themselves are self-descriptive. The Legacy has version less than 1.2.x and the Latest come with version 1.3.x.</p></li>
+<li><p>We can also go with the minimized, uncompressed, or zipped version.</p></li>
+</ul>
+</li>
+<li><p><b>CDN access</b> &minus; You also have access to a CDN. The CDN gives you access to regional data centers. In this case, the Google host. The CDN transfers the responsibility of hosting files from your own servers to a series of external ones. It also offers an advantage that if the visitor of your web page has already downloaded a copy of AngularJS from the same CDN, there is no need to re-download it.</p></li>
+</ul>
+<blockquote>
+We are using the CDN versions of the library throughout this tutorial.</blockquote>
+<h2>Example</h2>
+<p>Now let us write a simple example using AngularJS library. Let us create an HTML file <i>myfirstexample.html</i> shown as below &minus;</p>
+
+<pre class="prettyprint notranslate">
+&lt;!doctype html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"&gt;&lt;/script&gt;
+   &lt;/head&gt;
+   
+   &lt;body ng-app = "myapp"&gt;
+      &lt;div ng-controller = "HelloController" &gt;
+         &lt;h2&gt;Welcome {{helloTo.title}} to the world of Techno Tutor!&lt;/h2&gt;
+      &lt;/div&gt;
+      
+      &lt;script&gt;
+         angular.module("myapp", [])
+         
+         .controller("HelloController", function($scope) {
+            $scope.helloTo = {};
+            $scope.helloTo.title = "AngularJS";
+         });
+      &lt;/script&gt;
+      
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>Let us go through the above code in detail &minus;</p>
+<h3>Include AngularJS</h3>
+<p>We include the AngularJS JavaScript file in the HTML page so that we can use it &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;head&gt;
+   &lt;script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"&gt;
+   &lt;/script&gt;
+&lt;/head&gt;
+</pre>
+<p>You can check the latest version of AngularJS on its official website.</p>
+<h3>Point to AngularJS app</h3>
+<p>Next, it is required to tell which part of HTML contains the AngularJS app. You can do this by adding the ng-app attribute to the root HTML element of the AngularJS app. You can either add it to the html element or the body element as shown below &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;body ng-app = "myapp"&gt;
+&lt;/body&gt;
+</pre>
+<h3>View</h3>
+<p>The view is this part &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;div ng-controller = "HelloController" &gt;
+   &lt;h2&gt;Welcome {{helloTo.title}} to the world of Techno Tutors&lt;/h2&gt;
+&lt;/div&gt;
+</pre>
+<p><i>ng-controller</i> tells AngularJS which controller to use with this view. <i>helloTo.title </i>tells AngularJS to write the model value named helloTo.title in HTML at this location.</p>
+<h3>Controller</h3>
+<p>The controller part is &minus;</p>
+<pre class="prettyprint notranslate">
+&lt;script&gt;
+   angular.module("myapp", [])
+   
+   .controller("HelloController", function($scope) {
+      $scope.helloTo = {};
+      $scope.helloTo.title = "AngularJS";
+   });
+&lt;/script&gt;
+</pre>
+<p>This code registers a controller function named HelloController in the angular module named <i>myapp</i>. We will study more about <a href="angular-module.html">modules</a> and <a href="angular-controller.html">controllers</a> in their respective chapters. The controller function is registered in angular via the angular.module(...).controller(...) function call.</p>
+<p>The $scope parameter model is passed to the controller function. The controller function adds a <i>helloTo</i> JavaScript object, and in that object it adds a <i>title</i> field.</p>
+<h3>Execution</h3>
+<p>Save the above code as <i>myfirstexample.html</i> and open it in any browser. You get to see the following output &minus;</p>
+<pre class="result notranslate">
+Welcome AngularJS to the world of Techno Tutors
+</pre>
+<p>What happens when the page is loaded in the browser ? Let us see &minus;</p>
+<ul class="list">
+<li><p>HTML document is loaded into the browser, and evaluated by the browser.</p></li>
+<li><p>AngularJS JavaScript file is loaded, the angular <i>global</i> object is created.</p></li>
+<li><p>The JavaScript which registers controller functions is executed.</p></li>
+<li><p>Next, AngularJS scans through the HTML to search for AngularJS apps as well as views.</p></li>
+<li><p>Once the view is located, it connects that view to the corresponding controller function.</p></li>
+<li><p>Next, AngularJS executes the controller functions.</p></li>
+<li><p>It then renders the views with data from the model populated by the controller. The page is now ready.</p></li>
+</ul>
+<hr />
+<div class="pre-btn">
+<a href="angular-overview.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+
+<div class="nxt-btn">
+<a href="angular-mvc.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

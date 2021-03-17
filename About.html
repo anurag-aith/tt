@@ -1,0 +1,97 @@
+<DOCTYPE! html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>About Us
+    </title>
+    <link rel="stylesheet" href="About.css">
+    <link rel="stylesheet" href="leftsidenav.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    <script>
+
+
+      function openNav() {
+        document.getElementById("myleftSidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("myleftSidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+    </script>
+  </head>
+
+  <body>
+
+    <div id="myleftSidenav" class="sidenav">
+      <h3>AngularJs Tutorial</h3>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="angular-home.html">AngularJS - Home</a>
+      <a href="angular-overview.html">AngularJS - Overview</a>
+      <a href="angular-environment.html">AngularJS - Environment Setup</a>
+      <a href="angular-mvc.html">AngularJS - MVC Architecture</a>
+      <a href="angular-first.html">AngularJS - First Application</a>
+      <a href="angular-directive.html">AngularJS - Directives</a>
+      <a href="angular-expression.html">AngularJS - Expressions</a>
+      <a href="angular-controller.html">AngularJS - Controllers</a>
+      <a href="angular-filter.html">AngularJS -Filters</a>
+      <a href="angular-table.html">AngularJS - Tables</a>
+      <a href="angular-dom.html">AngularJS - HTML DOM</a>
+      <a href="angular-module.html">AngularJS - Modules</a>
+      <a href="angular-form.html">AngularJS - Forms</a>
+      <a href="angular-view.html">AngularJS - Views</a>
+      <a href="angular-scope.html">AngularJS - Scope</a>
+      <a href="angular-service.html">AngularJS - Services</a>
+      <a href="angular-custom-dir.html">AngularJS - Custom Directives</a>
+
+    </div>
+    <div id="main">
+
+      <header class="hea">
+        <h1 class="b"> Welcome<span class="c"> To</span> Techno <span class="d">Tutor!</span>...</h1>
+      </header>
+      <ul id="menu">
+        <ul>
+          <center>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="LogIn.html">Quiz</a></li>
+            <li><a style="font-size:30px;cursor:pointer" onclick="openNav()">Our Courses</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="our.html">Dev.</a></li>
+          </center>
+        </ul>
+      </ul>
+      <div class="d1">
+
+        <h2>About Us</h2>
+        <div></div>
+        <!-- <p>
+          This is about us section of our website. In this tab we gonn a share our some details about this website and
+          our services. It's a saprate tab for About Us section.
+        </p> -->
+        <h3 class="h">What Is Techno Tutors?</h3>
+        <ul class="lis">
+          <li>Techno Tutors is stands for technical tutorials.</li><br>
+          <li>Techno Tutors is a web developer site, with tutorials on web development language like: AngularJs </li>
+        </ul>
+        <h3 class="h">Easy Learning</h3>
+        <ul class="lis">
+          <li>Techno Tutors has focus on simplicity.</li><br>
+          <li>Techno Tutors practice easy and straight-forward learning.</li><br>
+          <li>Techno Tutors uses simple code explanations with simple illustrations of how to use it</li><br>
+          <li>You can execute computer code experimentally, to see what works and what does not, before implementing it.
+          </li><br>
+          <li>If you find an error, or a broken link, please tell us about it.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+  </html>

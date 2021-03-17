@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+            <title>Overview
+            </title>
+            <link rel="stylesheet" href="Home.css">
+            <link rel="stylesheet" href="leftsidenav.css">
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+          
+           <script>
+
+function openNav() {
+  document.getElementById("myleftSidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("myleftSidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+
+</script>
+	<link rel="stylesheet" type="text/css" href="angularhome.css">
+</head>
+
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="angularhome.css">
+</head>
+<body>
+	  <div id="myleftSidenav" class="sidenav"><h3>AngularJs Tutorial</h3>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="angular-home.html">AngularJS - Home</a>
+  <a href="angular-overview.html">AngularJS - Overview</a>
+  <a href="angular-environment.html">AngularJS - Environment Setup</a>
+  <a href="angular-mvc.html">AngularJS - MVC Architecture</a>
+  <a href="angular-first.html">AngularJS - First Application</a>
+  <a href="angular-directive.html">AngularJS - Directives</a>
+  <a href="angular-expression.html">AngularJS - Expressions</a>
+  <a href="angular-controller.html">AngularJS - Controllers</a>
+  <a href="angular-filter.html">AngularJS -Filters</a>
+  <a href="angular-table.html">AngularJS - Tables</a>
+  <a href="angular-dom.html">AngularJS - HTML DOM</a>
+  <a href="angular-module.html">AngularJS - Modules</a>
+  <a href="angular-form.html">AngularJS - Forms</a>
+  <a href="angular-view.html">AngularJS - Views</a>
+  <a href="angular-scope.html">AngularJS - Scope</a>
+  <a href="angular-service.html">AngularJS - Services</a>
+  <a href="angular-custom-dir.html">AngularJS - Custom Directives</a>
+</div>
+
+           <div id="main">
+
+            <header class="hea"><h1 class="b"> Welcome<span class="c"> To</span> Techno <span class="d">Tutor!</span>...</h1></header>
+      
+           <ul id="menu">
+                <ul>
+                     <center>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="LogIn.html">Quiz</a></li>
+                    <li><a style="font-size:30px;cursor:pointer" onclick="openNav()">Our Courses</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="our.html">Dev.</a></li>
+                    </center>
+                </ul>
+            </ul>
+
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+
+<hr />
+
+<div class="pre-btn">
+<a href="angular-home.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<h1>AngularJS - Overview</h1>
+<div class="nxt-btn">
+<a href="angular-environment.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>AngularJS is an open-source web application framework. It was originally developed in 2009 by Misko Hevery and Adam Abrons. It is now maintained by Google. Its latest version is 1.2.21.</p>
+<p>Definition of AngularJS as put by its official documentation</a> is as follows &minus;</p>
+<blockquote>
+<p>AngularJS is a structural framework for dynamic web applications. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application components clearly and succinctly. Its data binding and dependency injection eliminate much of the code you currently have to write. And it all happens within the browser, making it an ideal partner with any server technology.</p>
+</blockquote>
+<h2>General Features</h2>
+<p>The general features of AngularJS are as follows &minus;</p>
+<ul class="list">
+<li><p>AngularJS is a efficient framework that can create Rich Internet Applications (RIA).</p></li>
+<li><p>AngularJS provides developers an options to write client side applications using JavaScript in a clean Model View Controller (MVC) way.</p></li>
+<li><p>Applications written in AngularJS are cross-browser compliant. AngularJS automatically handles JavaScript code suitable for each browser.</p></li>
+<li><p>AngularJS is open source, completely free, and used by thousands of developers around the world. It is licensed under the Apache license version 2.0.</p></li>
+</ul>
+<p>Overall, AngularJS is a framework to build large scale, high-performance, and easyto-maintain web applications.</p>
+<h2>Core Features</h2>
+<p>The core features of AngularJS are as follows &minus;</p>
+<ul class="list">
+<li><p><b>Data-binding</b> &minus; It is the automatic synchronization of data between model and view components.</p></li>
+<li><p><b>Scope</b> &minus; These are objects that refer to the model. They act as a glue between controller and view.</p></li>
+<li><p><b>Controller</b> &minus; These are JavaScript functions bound to a particular scope.</p></li>
+<li><p><b>Services</b> &minus; AngularJS comes with several built-in services such as $http to make a XMLHttpRequests. These are singleton objects which are instantiated only once in app.</p></li>
+<li><p><b>Filters</b> &minus; These select a subset of items from an array and returns a new array.</p></li>
+<li><p><b>Directives</b> &minus; Directives are markers on DOM elements such as elements, attributes, css, and more. These can be used to create custom HTML tags that serve as new, custom widgets. AngularJS has built-in directives such as ngBind, ngModel, etc.</p></li>
+<li><p><b>Templates</b> &minus; These are the rendered view with information from the controller and model. These can be a single file (such as index.html) or multiple views in one page using <i>partials</i>.</p></li>
+<li><p><b>Routing</b> &minus; It is concept of switching views.</p></li>
+<li><p><b>Model View Whatever</b> &minus; MVW is a design pattern for dividing an application into different parts called Model, View, and Controller, each with distinct responsibilities. AngularJS does not implement MVC in the traditional sense, but rather something closer to MVVM (Model-View-ViewModel). The Angular JS team refers it humorously as Model View Whatever.</p></li>
+<li><p><b>Deep Linking</b> &minus; Deep linking allows to encode the state of application in the URL so that it can be bookmarked. The application can then be restored from the URL to the same state.</p></li>
+<li><p><b>Dependency Injection</b> &minus; AngularJS has a built-in dependency injection subsystem that helps the developer to create, understand, and test the applications easily.</p></li>
+</ul>
+<h2>Concepts</h2>
+<p>The following diagram depicts some important parts of AngularJS which we will discuss in detail in the subsequent chapters.</p>
+<img class="im" src="image/angularjs_concepts.jpg" alt="AngularJS Concepts" />
+
+
+<h2>Advantages of AngularJS</h2>
+<p>The advantages of AngularJS are &minus;</p>
+<ul class="list">
+<li><p>It provides the capability to create Single Page Application in a very clean and maintainable way.</p></li>
+<li><p>It provides data binding capability to HTML. Thus, it gives user a rich and responsive experience.</p></li>
+<li><p>AngularJS code is unit testable.</p></li>
+<li><p>AngularJS uses dependency injection and make use of separation of concerns.</p></li>
+<li><p>AngularJS provides reusable components.</p></li>
+<li><p>With AngularJS, the developers can achieve more functionality with short code.</p></li>
+<li><p>In AngularJS, views are pure html pages, and controllers written in JavaScript do the business processing.</p></li>
+</ul>
+<p>On the top of everything, AngularJS applications can run on all major browsers and smart phones, including Android and iOS based phones/tablets.</p>
+<h2>Disadvantages of AngularJS</h2>
+<p>Though AngularJS comes with a lot of merits, here are some points of concern &minus;</p>
+<ul class="list">
+<li><p><b>Not Secure</b> &minus; Being JavaScript only framework, application written in AngularJS are not safe. Server side authentication and authorization is must to keep an application secure.</p></li>
+<li><p><b>Not degradable</b> &minus; If the user of your application disables JavaScript, then nothing would be visible, except the basic page.</p></li>
+</ul>
+<h2>AngularJS Directives</h2>
+<p>The AngularJS framework can be divided into three major parts &minus;</p>
+<ul class="list">
+<li><p><b>ng-app</b> &minus; This directive defines and links an AngularJS application to HTML.</p></li>
+<li><p><b>ng-model</b> &minus; This directive binds the values of AngularJS application data to HTML input controls.</p></li>
+<li><p><b>ng-bind</b> &minus; This directive binds the AngularJS application data to HTML tags.</p></li>
+</ul>
+<hr />
+<div class="pre-btn">
+<a href="angular-home.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="angular-environment.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr />
+</div>
+</div>
+</div>
+</body>
+</html>

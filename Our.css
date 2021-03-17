@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.team{
+    overflow: hidden;
+    text-align: center;
+    background: #34495e;
+    padding: 60px;
+}
+
+.team h2{
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.border{
+    display: block;
+    margin: auto auto 30px;
+    width: 200px;
+    height: 3px;
+    background: #3498db;
+    margin-bottom: 40pxl;
+}
+
+.ps{
+    margin-bottom: 40px;
+}
+
+.ps a{
+    display: inline-block;
+    margin: 0 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.ps a img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4s all;
+}
+
+.ps a:hover > img{
+    filter: none;
+}
+
+.section{
+    width: 600px;
+    margin: auto;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    height: 0px;
+    overflow: hidden;
+}
+
+.section:target{
+    height: auto;
+}
+
+.name{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+#menu{
+    margin: 0;
+    padding: 0;
+    margin-top: 0px;
+}
+
+#menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+#menu li a{
+    text-decoration: none;
+    position: relative;
+    color: #313131;
+    font-size: 25px;
+    font-weight: 40px;
+    font-family: sans-serif;
+    display: block;
+    overflow: hidden;
+    transition: 0.7s all;
+    padding: 13px;
+    text-transform: uppercase;
+    
+}
+
+#menu li a:before{
+    content: '';
+    width: 35px;
+    position: absolute;
+    border-bottom: 4px solid #313131;
+    right: 350px;
+    transition: 0.7s all;
+}
+
+#menu li a:hover:before{
+    right: 0;
+}
+
+
+.hea{
+     background: url(Image/beautiful-colorful-polygonal-shapes-background-vector.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 194px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.b{
+    position: absolute;
+    transform: translate(0%,0%);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #2BBBAD;
+
+}
+.c{
+    
+    transform: translate(0%,0%);
+    font-size: 35px;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    color:rgba(233, 30, 99, 0.7);
+}
+.d{
+    transform: translate(0%,0%);
+    font-size: 35px;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    color:rgba(233, 30, 99, 0.7);
+}
+a{
+    text-decoration:none;
+     color:white; 
+     cursor:pointer;
+}

@@ -1,0 +1,121 @@
+.d1{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(Image/abstract-background-blur-255379.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow:repeat;
+   
+    justify-content: center;
+    
+}
+
+.h,h2{
+    text-align: center;
+     font-family: sans-serif;
+    margin: 10px;
+    padding: 7px;
+    font-weight:normal;
+    color: #0d47a1;
+}
+
+
+.lis,p{
+    list-style: none;
+    text-align: center;
+    color: ;
+    font-weight: 200;
+    margin: 20px;
+    font-size: 20px;
+    font-family: bookman;
+    color:#1c2331 ; 
+}
+h1{
+    background: white;
+    color: #007bff;
+    padding: 10px 20px;
+}
+
+.z{
+    color:#00acc1 ;
+}
+.hea{
+     background: url(Image/beautiful-colorful-polygonal-shapes-background-vector.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 194px;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.b{
+    position: absolute;
+    transform: translate(0%,0%);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #2BBBAD;
+
+}
+.c{
+    
+    transform: translate(0%,0%);
+    font-size: 35px;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    color:rgba(233, 30, 99, 0.7);
+}
+.d{
+    transform: translate(0%,0%);
+    font-size: 35px;
+    font-weight: 700;
+    
+    text-transform: uppercase;
+    color:rgba(233, 30, 99, 0.7);
+}
+
+
+#menu{
+    margin: 0;
+    padding: 0;
+    margin-top: 0px;
+}
+
+#menu li{
+    list-style: none;
+    display: inline-block;
+}
+
+#menu li a{
+    text-decoration: none;
+    position: relative;
+    color: #313131;
+    font-size: 25px;
+    font-weight: 40px;
+    font-family: sans-serif;
+    display: block;
+    overflow: hidden;
+    transition: 0.7s all;
+    padding: 13px;
+    text-transform: uppercase;
+    
+}
+
+#menu li a:before{
+    content: '';
+    width: 35px;
+    position: absolute;
+    border-bottom: 4px solid #313131;
+    right: 350px;
+    transition: 0.7s all;
+}
+
+#menu li a:hover:before{
+    right: 0;
+}
